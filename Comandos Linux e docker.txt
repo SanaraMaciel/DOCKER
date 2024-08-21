@@ -36,6 +36,34 @@ Obs: As flags -p e -P são úteis quando queremos fazer o mapeamento de portas e
 
 * comando para ver o historico(camadas) especificas de uma imagem: docker history ex: docker history f589ccde7957
 
+* parar todos os conteiners de uma vez só : docker stop $(docker container ls -q)
+
+* remover todos os conteiners de uma vez só, inclusive os parados: docker rmi $(docker container ls -aq)
+
+* remover todos as imagens de uma vez só, inclusive os parados: docker rmi $(docker image ls -aq) -- as vezes é necessário usar o --force no final para remover a remoção
+
+* mostrar o tamanho virtual do conteiner:  docker ps -s 
+
+* lista todos os volumes criados na máquina: docker volume ls
+
+* criando um volume: docker volume create meu-volume
+ 
+* criando um arquivo para ser gerenciado pelo docker: entre dentro do diretório escolhido e digite: touch um-arquivo-qualquer
+
+* cria um volume:  docker create volume {nome do volume}   
+
+* inspeciona detalhes do volume: docker inspect {nome do volume}
+
+* mostra informações do volume: docker volume ls 
+ 
+* remove volumes locais que não estão sendo usados : docker prune {nome do volume}
+
+* remove o volume : docker rm {nome do volume} 
+ 
+* criando tmpfs para linux: docker run -it --tmpfs=/app ubuntu bash 
+
+* inspecionando um container: docker inspect {ID do container}
+
 ******* Criando uma imagem : *********************
 
 * docker build -t sanarafelicio/app-node:1.0 .
