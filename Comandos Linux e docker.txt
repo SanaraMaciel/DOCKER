@@ -64,6 +64,16 @@ Obs: As flags -p e -P são úteis quando queremos fazer o mapeamento de portas e
 
 * inspecionando um container: docker inspect {ID do container}
 
+* lista todas as redes disponiveis : docker network ls 
+
+* criando a própria rede para usar no docker: docker network create --driver bridge minha-bridge{Nome da rede}
+
+* definindo um nome e a rede a ser usada para o container ao executar ele: docker run -it --name ubuntu1 --network minha-bridge ubuntu bash
+
+* executar um container em modo detached(pra ele não travar o terminal): docker compose up -d 
+
+* remover todos os container e redes criadas: docker compose down
+
 ******* Criando uma imagem : *********************
 
 * docker build -t sanarafelicio/app-node:1.0 .
